@@ -5,26 +5,32 @@
   <style>
     body {
       background: #fafafa;
+      padding: 0;
+      margin: 0;
     }
   </style>
 </head>
 <body>
-  <div id="demo"></div>
-
   <script type="module">
     import { html, render } from 'lit-html';
     import '../agnostic-lib.js';
-    import '../features/tooltip/tooltip.js';
+    import '../src/features/tooltip/tooltip.js';
+    import '../src/features/list/list.js';
+    import '../src/features/list/list-item.js';
 
     const title = 'Hello owc World!';
     render(
       html`
-        <agnostic-lib .title=${title}>
-          some more light-dom
-        </agnostic-lib>
-        
+        <ag-list>
+          <ag-list-item>
+            banana
+          </ag-list-item>
+          <ag-list-item>
+            maça
+          </ag-list-item>
+        </ag-list>
       `,
-      document.querySelector('#demo')
+      document.querySelector('body')
     );
   </script>
 </body>
